@@ -7,7 +7,7 @@
 SELECT * FROM $objectName WHERE 0
 ```
 
-Предлагается изменить:
+Предлагается изменить (в методе `_getInCondition`):
 ```
 if (count($values) === 0) return '0'; 
 ```
@@ -15,7 +15,7 @@ if (count($values) === 0) return '0';
 ```
 if (count($values) === 0) return false; 
 ```
-также:
+также (в методе `_loadObjectsByFilter`):
 ```
 return $this->_loadObjectsByFilter('user', [$idsFilter]);
 ```
